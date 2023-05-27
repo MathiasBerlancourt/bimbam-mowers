@@ -43,18 +43,6 @@ const Area = ({ lawn, data }) => {
   if (data) {
     const instructionsList = instructionsRun(data);
     console.log("instructionsList", instructionsList);
-
-    //transformer instructionsList en deux tableaux un pour la premiere tondeuse et un pour la deuxieme en fonction de la liste des instructions
-    //pour la premiere tondeuse
-    const instructionsListMower1 = instructionsList.filter((item, index) => {
-      return index % 2 === 0;
-    });
-    console.log("instructionsListMower1", instructionsListMower1);
-    //pour la deuxieme tondeuse
-    const instructionsListMower2 = instructionsList.filter((item, index) => {
-      return index % 2 !== 0;
-    });
-    console.log("instructionsListMower2", instructionsListMower2);
   }
 
   return (
