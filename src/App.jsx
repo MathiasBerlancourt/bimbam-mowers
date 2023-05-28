@@ -29,9 +29,11 @@ function App() {
 
   return (
     <div className="App">
+      <h1>Les tondeuses </h1>
       <input type="file" onChange={handleFileChange} />
       <h2>Les instructions :</h2>
-      <div>{data}</div>
+      <div className="data">{data}</div>
+
       {lawn && <Area lawn={lawn} data={data} />}
     </div>
   );

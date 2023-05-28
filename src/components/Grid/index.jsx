@@ -4,8 +4,17 @@ import { createGrid } from "../../logics/createGrid";
 import grassImage from "../../assets/grass.webp";
 import mowerImage from "../../assets/mower.png";
 
-const Grid = ({ x, y, mX, mY }) => {
+const Grid = ({ x, y, mX, mY, mowerId, orientation }) => {
   const grid = createGrid(x, y, mX, mY);
+  const borderColor = mowerId === 1 ? "2px solid red" : "2px solid blue";
+  const transformDegree =
+    orientation === "E"
+      ? "rotate(0deg)"
+      : orientation === "N"
+      ? "rotate(270deg)"
+      : orientation === "S"
+      ? "rotate(90deg)"
+      : "rotate(180deg)";
 
   return (
     <>
@@ -31,6 +40,8 @@ const Grid = ({ x, y, mX, mY }) => {
                           backgroundImage: `url(${grassImage})`,
                           backgroundSize: "cover",
                           height: "50px",
+                          border: borderColor,
+                          transform: transformDegree,
                         }}
                       />
                     </div>

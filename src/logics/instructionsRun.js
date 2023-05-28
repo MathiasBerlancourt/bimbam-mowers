@@ -76,7 +76,6 @@ export const instructionsRun = (data) => {
         }
       }
 
-      // console.log("mowerCopy", mowerCopy);
       mowerCopy.x = mower.x;
       mowerCopy.y = mower.y;
       mowerCopy.orientation = mower.orientation;

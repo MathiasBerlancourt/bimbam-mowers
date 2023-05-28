@@ -16,5 +16,3 @@ export const createGrid = (rows, columns, mowerX, mowerY) => {
 
   return grid;
 };
-
-console.log(createGrid(5, 5, 3, 2));
