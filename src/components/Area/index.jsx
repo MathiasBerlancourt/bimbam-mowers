@@ -1,66 +1,42 @@
-import "./index.css";
+import React, { useEffect, useState } from "react";
 import { instructionsRun } from "../../logics/instructionsRun";
 import backgroundGrass from "../../assets/grass.webp";
 import mowerImage from "../../assets/mower.png";
+import { createGrid } from "../../logics/createGrid";
+import Grid from "../Grid";
+import "./index.css";
 
 const Area = ({ lawn, data }) => {
-  const { x, y } = lawn;
-
-  const gridStyle = {
-    display: "grid",
-    gridTemplateColumns: `repeat(${x}, 1fr)`,
-    gridTemplateRows: `repeat(${y}, 1fr)`,
-    backgroundImage: `url(${backgroundGrass})`,
-    backgroundSize: "cover",
-    border: "1px solid green",
-    width: "500px",
-    height: "500px",
-    borderRadius: "10px",
-    //je veux que la position x=5 et y=5 soit positionnée en haut a droite en faisant une rotation
-    transform: "rotate(90deg)",
-  };
-
-  const gridItemStyle = {
-    display: "flex",
-    flexDirection: "column",
-    color: "black",
-    fontWeight: "bold",
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "lightgreen",
-    border: "3px solid green",
-    borderRadius: "10px",
-    width: "100px",
-    height: "100px",
-    // gridColumn: `${x + 1}`,
-    // gridRow: `${y + 1}`,
-    //position x=0 et y=0 de la tondeuse
-    gridColumn: 1,
-    gridRow: 1,
-    transform: "rotate(-90deg)",
-  };
-
+  const [mX, setMX] = useState(0);
+  const [mY, setMY] = useState(0);
+  const mower1 = [];
+  const mower2 = [];
+  let step = 0;
+  // console.log("lawn:", lawn);
   if (data) {
     const instructionsList = instructionsRun(data);
-    console.log("instructionsList", instructionsList);
-  }
 
-  return (
-    <div>
-      <div style={gridStyle}>
-        {data && (
-          <div style={gridItemStyle}>
-            <span>1</span>
-            <img src={mowerImage} alt="mower" style={{ height: "30px" }} />
-            <span>
-              x:{x} y:{y}
-            </span>
-          </div>
-        )}
+    const handleClick = (instructionsList) => {
+      console.log("run");
+      for (let i = 0; i < instructionsList.length; i++) {
+        for (let j = 0; j < instructionsList[i].length; j++) {
+          setMX(instructionsList[i][j].x);
+          setMY(instructionsList[i][j].y);
+          console.log("instructionsList[i][j]:", instructionsList[i][j]);
+        }
+      }
+    };
+
+    return (
+      <div>
+        <div className="area">
+          <Grid x={lawn.x} y={lawn.y} mX={mX} mY={mY} />
+        </div>
+
+        <button onClick={() => handleClick(instructionsList)}>Run</button>
       </div>
-      <button>Run</button>
-    </div>
-  );
+    );
+  }
 };
 
 export default Area;

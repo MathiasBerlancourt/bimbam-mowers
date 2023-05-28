@@ -27,8 +27,6 @@ function App() {
     }
   }, [data]);
 
-  console.log("lawn:", lawn);
-
   return (
     <div className="App">
       <input type="file" onChange={handleFileChange} />

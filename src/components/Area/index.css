@@ -1,30 +1,9 @@
-.grid-container {
-  display: grid;
-  grid-template-columns: repeat(
-    auto-fit,
-    minmax(50px, 1fr)
-  ); /* Colonnes de taille fixe de 50px */
-  grid-gap: 5px; /* Espacement entre les cellules */
-}
+/* Area Component */
 
-.grid-item {
-  background-color: #527910; /* Couleur de fond des cellules */
-
-  height: 50px;
-  width: 50px;
-}
-
-.grid-item {
-  position: relative;
-  border: 1px solid #000;
-  width: 40px;
-  height: 40px;
+.area {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column-reverse;
 }
-
-/* Ajoutez des styles pour d'autres tondeuses si nécessaire */
-.grid-item.mower-X-Y {
-  background-color: #ff0000; /* Couleur pour la tondeuse à la position (X, Y) */
+.completed {
+  text-decoration: line-through;
 }

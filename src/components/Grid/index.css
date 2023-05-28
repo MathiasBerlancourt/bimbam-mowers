@@ -1,0 +1,11 @@
+/* Grid Component */
+
+.row {
+  display: flex;
+}
+.cell {
+  margin: 0 0.2rem;
+}
+.mower {
+  margin: 0 0.2rem;
+}
