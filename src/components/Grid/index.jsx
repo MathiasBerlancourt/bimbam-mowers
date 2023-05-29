@@ -1,8 +1,8 @@
 import React from "react";
 import "./index.css";
 import { createGrid } from "../../logics/createGrid";
-import grassImage from "../../assets/grass.webp";
-import mowerImage from "../../assets/mower.png";
+import grassImage from "../../assets/img/grass.webp";
+import mowerImage from "../../assets/img/mower.png";
 
 const Grid = ({ x, y, mX, mY, mowerId, orientation }) => {
   const grid = createGrid(x, y, mX, mY);

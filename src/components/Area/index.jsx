@@ -36,7 +36,7 @@ const Area = ({ lawn, data }) => {
           //on passe a l'instruction suivante :
           setCurrentLineIndex(currentLineIndex + 1);
         } else {
-          setCurrentLineIndex(0); //reiinitise l'index de la ligne current
+          setCurrentLineIndex(0); //reiinitialise l'index de la ligne current
           setCurrentMowerIndex(currentMowerIndex + 1); //on passe a la mower suivante
         }
 
@@ -46,7 +46,7 @@ const Area = ({ lawn, data }) => {
         ) {
           //si on est a la derniere instruction de la derniere mower, on affiche un message d'alerte :
           setAlert(
-            `Toutes les tondeuses ont fini leur travail ! Mower1: x:${lastMower_1_Instruction.x} y:${lastMower_1_Instruction.y} -orientation:${lastMower_1_Instruction.orientation} Mower2-x:${lastMower_2_Instruction.x} y:${lastMower_2_Instruction.y} orientation:${lastMower_2_Instruction.orientation}`
+            `Toutes les tondeuses ont fini leur travail ! -Mower1: x:${lastMower_1_Instruction.x} y:${lastMower_1_Instruction.y} orientation:${lastMower_1_Instruction.orientation} -Mower2-x:${lastMower_2_Instruction.x} y:${lastMower_2_Instruction.y} orientation:${lastMower_2_Instruction.orientation}`
           );
         }
       }
